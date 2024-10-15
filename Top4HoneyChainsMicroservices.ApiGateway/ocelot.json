@@ -1,0 +1,245 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Beekeepers",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5149
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetBeekeepers",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Beekeepers",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5149
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/AddBeekeeper",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Beekeepers",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5149
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/EditBeekeeper",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Beekeepers/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5149
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetBeekeeperById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Beekeepers/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5149
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteBeekeeper/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BeekeepingPurposeType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5149
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetAllBeekeepingPurposeTypes",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BeekeepingPurposeType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5149
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateBeekeepingPurposeTypes",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BeekeepingPurposeType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5149
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateBeekeepingPurposeTypes",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BeekeepingPurposeType/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5149
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetBeekeepingPurposeTypesById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BeekeepingPurposeType/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5187
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteBeekeepingPurposeType/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BeekeepingType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5187
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetBeekeepingTypes",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BeekeepingType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5187
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateBeekeepingType",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BeekeepingType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5187
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateBeekeepingType",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BeekeepingType/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5187
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteBeekeepingType/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BeekeepingType/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5187
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetBeekeepingTypeById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/EducationLevel",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5187
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetAllEducationLevel",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/EducationLevel",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5187
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateEducationLevel",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/EducationLevel",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5187
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateEducationLevel",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/EducationLevel/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5187
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetEducationLevelById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/EducationLevel/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5187
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteEducationLevel/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    }
+  ],
+  "GlobalConfiguration": { "BaseUrl": "http://localhost:5164/" }
+}

@@ -1,0 +1,6 @@
+@Top4HoneyChainsMicroservices.ApiGateway_HostAddress = http://localhost:5025
+
+GET {{Top4HoneyChainsMicroservices.ApiGateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

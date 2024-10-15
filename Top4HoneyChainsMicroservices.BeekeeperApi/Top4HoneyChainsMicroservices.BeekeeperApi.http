@@ -1,0 +1,6 @@
+@Top4HoneyChainsMicroservices.BeekeeperApi_HostAddress = http://localhost:5149
+
+GET {{Top4HoneyChainsMicroservices.BeekeeperApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

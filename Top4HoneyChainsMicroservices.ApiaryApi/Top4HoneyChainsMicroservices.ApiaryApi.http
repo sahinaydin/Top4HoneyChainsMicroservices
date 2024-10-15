@@ -1,0 +1,6 @@
+@Top4HoneyChainsMicroservices.ApiaryApi_HostAddress = http://localhost:5190
+
+GET {{Top4HoneyChainsMicroservices.ApiaryApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

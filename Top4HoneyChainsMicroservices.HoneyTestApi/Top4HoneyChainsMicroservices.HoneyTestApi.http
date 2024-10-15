@@ -1,0 +1,6 @@
+@Top4HoneyChainsMicroservices.HoneyTestApi_HostAddress = http://localhost:5038
+
+GET {{Top4HoneyChainsMicroservices.HoneyTestApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
