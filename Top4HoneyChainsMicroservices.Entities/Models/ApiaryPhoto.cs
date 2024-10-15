@@ -7,7 +7,7 @@ public partial class ApiaryPhoto
 {
     public int PhotoId { get; set; }
 
-    public int ApiaryId { get; set; }
+    public int? ApiaryId { get; set; }
 
     public string Photo { get; set; } = null!;
 

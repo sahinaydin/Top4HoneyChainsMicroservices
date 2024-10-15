@@ -17,4 +17,9 @@
     <ProjectReference Include="..\Top4HoneyChainsMicroservices.Repository\Top4HoneyChainsMicroservices.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ApiaryPhotos\" />
+    <Folder Include="ApiaryPhotos\1\" />
+  </ItemGroup>
+
 </Project>

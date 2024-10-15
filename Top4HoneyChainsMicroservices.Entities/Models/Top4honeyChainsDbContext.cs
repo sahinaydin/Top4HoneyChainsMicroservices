@@ -94,7 +94,7 @@ public partial class Top4honeyChainsDbContext : DbContext
     public virtual DbSet<VwAspnetWebPartStateUser> VwAspnetWebPartStateUsers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-7FB0Q6H0;Database=TOP4HoneyChainsDb;Trusted_Connection=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=HASAN\\MSSQLSERVER2017;Database=TOP4HoneyChainsDb;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
