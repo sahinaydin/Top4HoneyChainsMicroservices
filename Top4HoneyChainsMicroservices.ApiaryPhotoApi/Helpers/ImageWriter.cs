@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using Microsoft.EntityFrameworkCore;
+using System.IO;
+using System.Net;
 using Top4HoneyChainsMicroservices.Entities.Models;
 using Top4HoneyChainsMicroservices.Entities.ViewModels;
 
@@ -6,11 +8,13 @@ namespace Top4HoneyChainsMicroservices.ApiaryPhotoApi.Helpers
 {
     public class ImageWriter
     {
-		public Response UploadImage(IFormFile file, string apiaryid)
+		private readonly Top4honeyChainsDbContext _context = new Top4honeyChainsDbContext();
+
+		public Response UploadImage(IFormFile file, ApiaryPhotoViewModel model)
 		{
 			if (CheckIfImageFile(file))
 			{
-				return WriteFile(file, apiaryid);
+				return WriteSaveFile(file, model);
 			}
 			return new Response { StatusCode = 100, ErrorMessage = "Invalid image file" };
 		}
@@ -27,7 +31,7 @@ namespace Top4HoneyChainsMicroservices.ApiaryPhotoApi.Helpers
 			return WriterHelper.GetImageFormat(fileBytes) != WriterHelper.ImageFormat.unknown;
 		}
 
-		public Response WriteFile(IFormFile file, string apiaryid)
+		public Response WriteSaveFile(IFormFile file, ApiaryPhotoViewModel model)
 		{
 			try
 			{
@@ -35,15 +39,15 @@ namespace Top4HoneyChainsMicroservices.ApiaryPhotoApi.Helpers
 				string fileName;
 				var extension = "." + file.FileName.Split('.')[file.FileName.Split('.').Length - 1];
 				fileName = Guid.NewGuid().ToString() + extension;
-				path = Path.Combine(Directory.GetCurrentDirectory(), "ApiaryPhotos", apiaryid);
+				path = Path.Combine(Directory.GetCurrentDirectory(), "ApiaryPhotos", model.ApiaryId.ToString());
 				if (!Directory.Exists(path))
 				{
-					Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "ApiaryPhotos", apiaryid.ToString()));
-					path = Path.Combine(Directory.GetCurrentDirectory(), "ApiaryPhotos", apiaryid, fileName);
+					Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "ApiaryPhotos", model.ApiaryId.ToString()));
+					path = Path.Combine(Directory.GetCurrentDirectory(), "ApiaryPhotos", model.ApiaryId.ToString(), fileName);
 				}
 				else
 				{
-					path = Path.Combine(Directory.GetCurrentDirectory(), "ApiaryPhotos", apiaryid, fileName);
+					path = Path.Combine(Directory.GetCurrentDirectory(), "ApiaryPhotos", model.ApiaryId.ToString(), fileName);
 
 				}
 
@@ -53,7 +57,41 @@ namespace Top4HoneyChainsMicroservices.ApiaryPhotoApi.Helpers
 				}
 
 				var imageBytes = File.ReadAllBytes(path);
+
+
+				_context.ApiaryPhotos.Add(new ApiaryPhoto
+				{
+					ApiaryId = model.ApiaryId,
+					Photo = fileName,
+					PhotoDesc = model.PhotoDesc,
+					CreatedDate = model.CreatedDate,
+					ProductionPeriodId = model.ProductionPeriodId,
+					Approved = model.Approved
+				});
+				_context.SaveChanges();
+
 				return new Response { StatusCode = 200, ErrorMessage = "Success!" };
+			}
+			catch (Exception e)
+			{
+				return new Response { StatusCode = 100, ErrorMessage = e.Message };
+			}
+		}
+
+		public Response DeleteImage(string directoryName,string fileName)
+		{
+			try
+			{
+				string path = Path.Combine(Directory.GetCurrentDirectory(), "ApiaryPhotos",directoryName, fileName);
+				if (File.Exists(path))
+				{
+					File.Delete(path);
+					return new Response { StatusCode = 200, ErrorMessage = "Success!" };
+				}
+				else
+				{
+					return new Response { StatusCode = 100, ErrorMessage = "File not found!" };
+				}
 			}
 			catch (Exception e)
 			{

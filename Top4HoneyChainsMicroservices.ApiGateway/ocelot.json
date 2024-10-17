@@ -5,8 +5,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5149
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/GetBeekeepers",
@@ -17,11 +17,11 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5149
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/gateway/AddBeekeeper",
+      "UpstreamPathTemplate": "/gateway/CreateBeekeeper",
       "UpstreamHttpMethod": [ "Post" ]
     },
     {
@@ -29,11 +29,11 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5149
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/gateway/EditBeekeeper",
+      "UpstreamPathTemplate": "/gateway/UpdateBeekeeper",
       "UpstreamHttpMethod": [ "Put" ]
     },
     {
@@ -41,8 +41,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5149
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/GetBeekeeperById/{id}",
@@ -53,11 +53,11 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5149
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/gateway/DeleteBeekeeper/{id}",
+      "UpstreamPathTemplate": "/gateway/DeleteBeekeepers/{id}",
       "UpstreamHttpMethod": [ "Delete" ]
     },
     {
@@ -65,8 +65,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5149
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/GetAllBeekeepingPurposeTypes",
@@ -77,8 +77,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5149
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/CreateBeekeepingPurposeTypes",
@@ -89,8 +89,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5149
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/UpdateBeekeepingPurposeTypes",
@@ -101,8 +101,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5149
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/GetBeekeepingPurposeTypesById/{id}",
@@ -113,8 +113,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5187
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/DeleteBeekeepingPurposeType/{id}",
@@ -125,8 +125,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5187
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/GetBeekeepingTypes",
@@ -137,8 +137,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5187
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/CreateBeekeepingType",
@@ -149,8 +149,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5187
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/UpdateBeekeepingType",
@@ -161,8 +161,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5187
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/DeleteBeekeepingType/{id}",
@@ -173,8 +173,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5187
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/GetBeekeepingTypeById/{id}",
@@ -185,8 +185,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5187
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/GetAllEducationLevel",
@@ -197,8 +197,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5187
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/CreateEducationLevel",
@@ -209,8 +209,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5187
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/UpdateEducationLevel",
@@ -221,8 +221,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5187
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/GetEducationLevelById/{id}",
@@ -233,13 +233,937 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5187
+          "Host": "beekeepersapi.intalalab.net",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/DeleteEducationLevel/{id}",
       "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Apiary",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetApiaries",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Apiary",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateApiaries",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Apiary",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateApiaries",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Apiary/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetApiariesById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Apiary/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteApiaries/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryDisease",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetApiaryDiseases",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryDisease",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateApiaryDiseases",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryDisease",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateApiaryDiseases",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryDisease/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetApiaryDiseasesById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryDisease/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteApiaryDiseasesById/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryLocationType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetApiaryLocationType",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryLocationType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateApiaryLocationType",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryLocationType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateApiaryLocationType",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryLocationType/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetApiaryLocationTypeById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryLocationType/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteApiaryLocationType/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryTreatmentMethod",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetApiaryTreatmentMethod",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryTreatmentMethod",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateApiaryTreatmentMethod",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryTreatmentMethod",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateApiaryTreatmentMethod",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryTreatmentMethod/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetApiaryTreatmentMethodById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryTreatmentMethod/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteApiaryTreatmentMethod/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Disease",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetDisease",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Disease",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateDisease",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Disease",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateDisease",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Disease/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetDiseaseById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Disease/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteDisease/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryHoneyProductions",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetApiaryHoneyProductions",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryHoneyProductions",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateApiaryHoneyProductions",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryHoneyProductions",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateApiaryHoneyProductions",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryHoneyProductions/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetApiaryHoneyProductionsById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryHoneyProductions/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteApiaryHoneyProductions/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyDistributionTypes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyDistributionTypes",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyDistributionTypes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateHoneyDistributionTypes",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyDistributionTypes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateHoneyDistributionTypes",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyDistributionTypes/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyDistributionTypesById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyDistributionTypes/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteHoneyDistributionTypes/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTypes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTypes",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTypes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateHoneyTypes",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTypes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateHoneyTypes",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTypes/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTypesById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTypes/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteHoneyTypes/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ProductionPeriods",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetProductionPeriods",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ProductionPeriods",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateProductionPeriods",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ProductionPeriods",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateProductionPeriods",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ProductionPeriods/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetProductionPeriodsById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ProductionPeriods/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteProductionPeriods/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/TreatmentMethod",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetTreatmentMethod",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/TreatmentMethod",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateTreatmentMethod",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/TreatmentMethod",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateTreatmentMethod",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/TreatmentMethod/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetTreatmentMethodById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/TreatmentMethod/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeyproductionapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteTreatmentMethod/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryPhoto",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryphotoapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UploadPhoto",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApiaryPhoto/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryphotoapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/RemovePhoto/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestItems",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTestItems",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestItems",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateHoneyTestItems",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestItems",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateHoneyTestItems",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestItems/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTestItemsById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestItems/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteHoneyTestItems/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestResult",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTestResult",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestResult",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateHoneyTestResult",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestResult",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateHoneyTestResult",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestResult/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTestResultById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestResult/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteHoneyTestResult/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTests",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTests",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTests",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateHoneyTests",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTests",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateHoneyTests",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTests/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTestsById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTests/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteHoneyTests/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestStandard",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTestStandard",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestStandard",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateHoneyTestStandard",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestStandard",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateHoneyTestStandard",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestStandard/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTestStandardById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestStandard/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteHoneyTestStandard/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestStandardItem",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTestStandardItem",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestStandardItem",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CreateHoneyTestStandardItem",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestStandardItem",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/UpdateHoneyTestStandardItem",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestStandardItem/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetHoneyTestStandardItemById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/HoneyTestStandardItem/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "honeytestapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/DeleteHoneyTestStandardItem/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
     }
   ],
-  "GlobalConfiguration": { "BaseUrl": "http://localhost:5164/" }
+  "GlobalConfiguration": { "BaseUrl": "http://localhost:5025/" }
 }

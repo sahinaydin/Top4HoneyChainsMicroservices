@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{B2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top4HoneyChainsMicroservices.Repository", "Top4HoneyChainsMicroservices.Repository\Top4HoneyChainsMicroservices.Repository.csproj", "{2170EF37-EC1F-42FC-96B8-73E754F3DE91}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api's", "Api's", "{7C9D2171-0115-4715-83A1-88E2A4F50273}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apis", "Apis", "{7C9D2171-0115-4715-83A1-88E2A4F50273}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top4HoneyChainsMicroservices.ApiaryHoneyProductionApi", "Top4HoneyChainsMicroservices.ApiaryHoneyProductionApi\Top4HoneyChainsMicroservices.ApiaryHoneyProductionApi.csproj", "{24CB2BA7-7C8E-41E2-B9F6-5190002CEFA7}"
 EndProject
@@ -21,9 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top4HoneyChainsMicroservice
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top4HoneyChainsMicroservices.BeekeeperApi", "Top4HoneyChainsMicroservices.BeekeeperApi\Top4HoneyChainsMicroservices.BeekeeperApi.csproj", "{FEC8F77D-B865-4EF4-8413-C8DD637E77F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top4HoneyChainsMicroservices.ApiGateway", "Top4HoneyChainsMicroservices.ApiGateway\Top4HoneyChainsMicroservices.ApiGateway.csproj", "{A6B8687E-8922-4CD1-93C4-36312E3FEEC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top4HoneyChainsMicroservices.ApiGateway", "Top4HoneyChainsMicroservices.ApiGateway\Top4HoneyChainsMicroservices.ApiGateway.csproj", "{A6B8687E-8922-4CD1-93C4-36312E3FEEC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top4HoneyChainsMicroservices.ApiaryPhotoApi", "Top4HoneyChainsMicroservices.ApiaryPhotoApi\Top4HoneyChainsMicroservices.ApiaryPhotoApi.csproj", "{FCD3ECE9-AD52-44ED-A0AB-9C6F98D72CC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top4HoneyChainsMicroservices.ApiaryPhotoApi", "Top4HoneyChainsMicroservices.ApiaryPhotoApi\Top4HoneyChainsMicroservices.ApiaryPhotoApi.csproj", "{FCD3ECE9-AD52-44ED-A0AB-9C6F98D72CC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

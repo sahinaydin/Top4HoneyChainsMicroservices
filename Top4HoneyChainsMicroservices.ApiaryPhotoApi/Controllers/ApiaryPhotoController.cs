@@ -17,24 +17,13 @@ namespace Top4HoneyChainsMicroservices.ApiaryPhotoApi.Controllers
 		[Route("UploadPhoto")]
 		public Response PostApiaryPhoto([FromForm] ApiaryPhotoViewModel model)
 		{
-
 			Response response = new Response();
 			try
 			{
 				var imagecount = _context.ApiaryPhotos.Where(a => a.ApiaryId == model.ApiaryId).Count();
 				if (imagecount < 10)
 				{
-					_context.ApiaryPhotos.Add(new ApiaryPhoto
-					{
-						ApiaryId = model.ApiaryId,
-						Photo = model.Photo,
-						PhotoDesc = model.PhotoDesc,
-						CreatedDate = model.CreatedDate,
-						ProductionPeriodId = model.ProductionPeriodId,
-						Approved = model.Approved
-					});
-					_context.SaveChanges();
-					response = imageWriter.UploadImage(model.File, model.ApiaryId.ToString());
+					response = imageWriter.UploadImage(model.File, model);
 				}
 				else
 				{
@@ -45,6 +34,42 @@ namespace Top4HoneyChainsMicroservices.ApiaryPhotoApi.Controllers
 			catch (Exception ex)
 			{
 				response.StatusCode = 100;
+				response.ErrorMessage = ex.Message;
+			}
+			return response;
+		}
+
+		[HttpDelete]
+		[Route("RemovePhoto/{id}")]
+		public Response DeleteApiaryPhoto(int? id)
+		{
+			Response response = new Response();
+			try
+			{
+				if (id != null)
+				{
+					var photo = _context.ApiaryPhotos.Find(id);
+					if (photo != null)
+					{
+						_context.ApiaryPhotos.Remove(photo);
+						_context.SaveChanges();
+						response = imageWriter.DeleteImage(photo.ApiaryId.ToString(), photo.Photo);
+					}
+					else
+					{
+						response.StatusCode = (int)HttpStatusCode.NotImplemented;
+						response.ErrorMessage = "The photo is not found!";
+					}
+				}
+				else
+				{
+					response.StatusCode = (int)HttpStatusCode.NotImplemented;
+					response.ErrorMessage = "The photo is not valid!";
+				}
+			}
+			catch (Exception ex)
+			{
+				response.StatusCode = 200;
 				response.ErrorMessage = ex.Message;
 			}
 			return response;
