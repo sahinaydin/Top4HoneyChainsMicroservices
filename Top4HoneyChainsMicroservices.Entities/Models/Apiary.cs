@@ -9,9 +9,7 @@ public partial class Apiary
 
     public Guid? BeekeeperId { get; set; }
 
-    public string? ApiaryBarcode { get; set; }
-
-    public string? ApiaryIdentityNumber { get; set; }
+    public Guid? ApiaryQrcode { get; set; }
 
     public string ApiaryTitle { get; set; } = null!;
 
@@ -22,4 +20,6 @@ public partial class Apiary
     public decimal? LocationLongitude { get; set; }
 
     public int? LocationType { get; set; }
+
+    public int? ProductionPeriodId { get; set; }
 }

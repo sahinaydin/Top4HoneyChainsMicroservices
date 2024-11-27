@@ -61,7 +61,7 @@ namespace Top4HoneyChainsMicroservices.ApiaryPhotoApi.Helpers
 
 				_context.ApiaryPhotos.Add(new ApiaryPhoto
 				{
-					ApiaryId = model.ApiaryId,
+					ApiaryId = (int)model.ApiaryId,
 					Photo = fileName,
 					PhotoDesc = model.PhotoDesc,
 					CreatedDate = model.CreatedDate,

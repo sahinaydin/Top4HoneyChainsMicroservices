@@ -10,6 +10,4 @@ public partial class ApiaryDisease
     public int? DiseaseId { get; set; }
 
     public int? ApiaryId { get; set; }
-
-    public int? ProductionPeriodId { get; set; }
 }

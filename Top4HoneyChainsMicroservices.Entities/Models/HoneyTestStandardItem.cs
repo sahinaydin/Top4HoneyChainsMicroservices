@@ -9,7 +9,9 @@ public partial class HoneyTestStandardItem
 
     public int? HoneyStandardId { get; set; }
 
-    public int? HoneyTestItemId { get; set; }
+    public string? HoneyTestItemTitle { get; set; }
+
+    public string? HoneyTestItemDesc { get; set; }
 
     public string? ReferenceRangeValue { get; set; }
 

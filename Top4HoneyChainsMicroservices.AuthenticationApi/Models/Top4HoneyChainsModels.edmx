@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TOP4HoneyChainsDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BeekeeperEducationLevels">
+          <Key>
+            <PropertyRef Name="LevelId" />
+          </Key>
+          <Property Name="LevelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LevelTitle" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Beekeepers">
+          <Key>
+            <PropertyRef Name="BeekeeperId" />
+          </Key>
+          <Property Name="BeekeeperId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProfilePhoto" Type="varchar(max)" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdentityNumber" Type="varchar" MaxLength="50" />
+          <Property Name="BirthDate" Type="date" Nullable="false" />
+          <Property Name="ExperienceTime" Type="smallint" />
+          <Property Name="EducationLevel" Type="int" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="AssociationMembership" Type="varchar" MaxLength="75" />
+          <Property Name="BusinessNumber" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="BeekeepingPurposeType" Type="int" />
+          <Property Name="BeekeepingType" Type="int" />
+        </EntityType>
+        <EntityType Name="BeekeepingPurposeTypes">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeTitle" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BeekeepingTypes">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeTitle" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TOP4HoneyChainsDbModelStoreContainer">
+          <EntitySet Name="BeekeeperEducationLevels" EntityType="Self.BeekeeperEducationLevels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Beekeepers" EntityType="Self.Beekeepers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BeekeepingPurposeTypes" EntityType="Self.BeekeepingPurposeTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BeekeepingTypes" EntityType="Self.BeekeepingTypes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TOP4HoneyChainsDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BeekeeperEducationLevel">
+          <Key>
+            <PropertyRef Name="LevelId" />
+          </Key>
+          <Property Name="LevelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LevelTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Beekeeper">
+          <Key>
+            <PropertyRef Name="BeekeeperId" />
+          </Key>
+          <Property Name="BeekeeperId" Type="Guid" Nullable="false" />
+          <Property Name="ProfilePhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdentityNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ExperienceTime" Type="Int16" />
+          <Property Name="EducationLevel" Type="Int32" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AssociationMembership" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BeekeepingPurposeType" Type="Int32" />
+          <Property Name="BeekeepingType" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BeekeepingPurposeType">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BeekeepingType">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TOP4HoneyChainsDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BeekeeperEducationLevels" EntityType="Self.BeekeeperEducationLevel" />
+          <EntitySet Name="Beekeepers" EntityType="Self.Beekeeper" />
+          <EntitySet Name="BeekeepingPurposeTypes" EntityType="Self.BeekeepingPurposeType" />
+          <EntitySet Name="BeekeepingTypes" EntityType="Self.BeekeepingType" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TOP4HoneyChainsDbModelStoreContainer" CdmEntityContainer="TOP4HoneyChainsDbEntities">
+          <EntitySetMapping Name="BeekeeperEducationLevels">
+            <EntityTypeMapping TypeName="TOP4HoneyChainsDbModel.BeekeeperEducationLevel">
+              <MappingFragment StoreEntitySet="BeekeeperEducationLevels">
+                <ScalarProperty Name="LevelId" ColumnName="LevelId" />
+                <ScalarProperty Name="LevelTitle" ColumnName="LevelTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Beekeepers">
+            <EntityTypeMapping TypeName="TOP4HoneyChainsDbModel.Beekeeper">
+              <MappingFragment StoreEntitySet="Beekeepers">
+                <ScalarProperty Name="BeekeeperId" ColumnName="BeekeeperId" />
+                <ScalarProperty Name="ProfilePhoto" ColumnName="ProfilePhoto" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="ExperienceTime" ColumnName="ExperienceTime" />
+                <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="AssociationMembership" ColumnName="AssociationMembership" />
+                <ScalarProperty Name="BusinessNumber" ColumnName="BusinessNumber" />
+                <ScalarProperty Name="BeekeepingPurposeType" ColumnName="BeekeepingPurposeType" />
+                <ScalarProperty Name="BeekeepingType" ColumnName="BeekeepingType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BeekeepingPurposeTypes">
+            <EntityTypeMapping TypeName="TOP4HoneyChainsDbModel.BeekeepingPurposeType">
+              <MappingFragment StoreEntitySet="BeekeepingPurposeTypes">
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="TypeTitle" ColumnName="TypeTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BeekeepingTypes">
+            <EntityTypeMapping TypeName="TOP4HoneyChainsDbModel.BeekeepingType">
+              <MappingFragment StoreEntitySet="BeekeepingTypes">
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="TypeTitle" ColumnName="TypeTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

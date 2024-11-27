@@ -61,8 +61,6 @@ public partial class Top4honeyChainsDbContext : DbContext
 
     public virtual DbSet<HoneyTest> HoneyTests { get; set; }
 
-    public virtual DbSet<HoneyTestItem> HoneyTestItems { get; set; }
-
     public virtual DbSet<HoneyTestResult> HoneyTestResults { get; set; }
 
     public virtual DbSet<HoneyTestStandard> HoneyTestStandards { get; set; }
@@ -94,20 +92,15 @@ public partial class Top4honeyChainsDbContext : DbContext
     public virtual DbSet<VwAspnetWebPartStateUser> VwAspnetWebPartStateUsers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=HASAN\\MSSQLSERVER2017;Database=TOP4HoneyChainsDb;Trusted_Connection=True;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=HASAN\\MSSQLSERVER2017;Database=TOP4HoneyChainsDb;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.UseCollation("SQL_Latin1_General_CP1_CI_AS");
-
         modelBuilder.Entity<Apiary>(entity =>
         {
             entity.HasKey(e => e.ApiaryId).HasName("PK__Apiaries__7AF2440E983FF371");
 
-            entity.Property(e => e.ApiaryBarcode).IsUnicode(false);
-            entity.Property(e => e.ApiaryIdentityNumber)
-                .HasMaxLength(50)
-                .IsUnicode(false);
+            entity.Property(e => e.ApiaryQrcode).HasColumnName("ApiaryQRCode");
             entity.Property(e => e.ApiaryTitle)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -141,32 +134,26 @@ public partial class Top4honeyChainsDbContext : DbContext
 
         modelBuilder.Entity<ApiaryPhoto>(entity =>
         {
-            entity.HasKey(e => e.PhotoId).HasName("PK__ApiaryPh__21B7B5E216F880F7");
+            entity.HasKey(e => e.PhotoId).HasName("PK__ApiaryPh__21B7B5E2D92C95F6");
 
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.Photo)
-                .HasMaxLength(75)
+                .HasMaxLength(70)
                 .IsUnicode(false);
             entity.Property(e => e.PhotoDesc).IsUnicode(false);
-        });
-
-        modelBuilder.Entity<ApirayTreatmentMethod>(entity =>
-        {
-            entity.Property(e => e.EndDate).HasColumnType("datetime");
-            entity.Property(e => e.StartDate).HasColumnType("datetime");
         });
 
         modelBuilder.Entity<AspnetApplication>(entity =>
         {
             entity.HasKey(e => e.ApplicationId)
-                .HasName("PK__aspnet_A__C93A4C982CF8EBA2")
+                .HasName("PK__aspnet_A__C93A4C988C371CDB")
                 .IsClustered(false);
 
             entity.ToTable("aspnet_Applications");
 
-            entity.HasIndex(e => e.LoweredApplicationName, "UQ__aspnet_A__17477DE40A834DD7").IsUnique();
+            entity.HasIndex(e => e.LoweredApplicationName, "UQ__aspnet_A__17477DE41CCD7C9C").IsUnique();
 
-            entity.HasIndex(e => e.ApplicationName, "UQ__aspnet_A__309103318EF101C3").IsUnique();
+            entity.HasIndex(e => e.ApplicationName, "UQ__aspnet_A__309103319C8A5963").IsUnique();
 
             entity.HasIndex(e => e.LoweredApplicationName, "aspnet_Applications_Index").IsClustered();
 
@@ -179,7 +166,7 @@ public partial class Top4honeyChainsDbContext : DbContext
         modelBuilder.Entity<AspnetMembership>(entity =>
         {
             entity.HasKey(e => e.UserId)
-                .HasName("PK__aspnet_M__1788CC4D8B95C767")
+                .HasName("PK__aspnet_M__1788CC4DFC5ACF50")
                 .IsClustered(false);
 
             entity.ToTable("aspnet_Membership");
@@ -207,18 +194,18 @@ public partial class Top4honeyChainsDbContext : DbContext
             entity.HasOne(d => d.Application).WithMany(p => p.AspnetMemberships)
                 .HasForeignKey(d => d.ApplicationId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__aspnet_Me__Appli__69C6B1F5");
+                .HasConstraintName("FK__aspnet_Me__Appli__7132C993");
 
             entity.HasOne(d => d.User).WithOne(p => p.AspnetMembership)
                 .HasForeignKey<AspnetMembership>(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__aspnet_Me__UserI__6ABAD62E");
+                .HasConstraintName("FK__aspnet_Me__UserI__7226EDCC");
         });
 
         modelBuilder.Entity<AspnetPath>(entity =>
         {
             entity.HasKey(e => e.PathId)
-                .HasName("PK__aspnet_P__CD67DC58FD32F23A")
+                .HasName("PK__aspnet_P__CD67DC588B4FACC3")
                 .IsClustered(false);
 
             entity.ToTable("aspnet_Paths");
@@ -234,12 +221,12 @@ public partial class Top4honeyChainsDbContext : DbContext
             entity.HasOne(d => d.Application).WithMany(p => p.AspnetPaths)
                 .HasForeignKey(d => d.ApplicationId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__aspnet_Pa__Appli__178D7CA5");
+                .HasConstraintName("FK__aspnet_Pa__Appli__22CA2527");
         });
 
         modelBuilder.Entity<AspnetPersonalizationAllUser>(entity =>
         {
-            entity.HasKey(e => e.PathId).HasName("PK__aspnet_P__CD67DC59843ECC00");
+            entity.HasKey(e => e.PathId).HasName("PK__aspnet_P__CD67DC59BB766B83");
 
             entity.ToTable("aspnet_PersonalizationAllUsers");
 
@@ -250,13 +237,13 @@ public partial class Top4honeyChainsDbContext : DbContext
             entity.HasOne(d => d.Path).WithOne(p => p.AspnetPersonalizationAllUser)
                 .HasForeignKey<AspnetPersonalizationAllUser>(d => d.PathId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__aspnet_Pe__PathI__1D4655FB");
+                .HasConstraintName("FK__aspnet_Pe__PathI__2882FE7D");
         });
 
         modelBuilder.Entity<AspnetPersonalizationPerUser>(entity =>
         {
             entity.HasKey(e => e.Id)
-                .HasName("PK__aspnet_P__3214EC067789EB79")
+                .HasName("PK__aspnet_P__3214EC06FCE7C696")
                 .IsClustered(false);
 
             entity.ToTable("aspnet_PersonalizationPerUser");
@@ -273,16 +260,16 @@ public partial class Top4honeyChainsDbContext : DbContext
 
             entity.HasOne(d => d.Path).WithMany(p => p.AspnetPersonalizationPerUsers)
                 .HasForeignKey(d => d.PathId)
-                .HasConstraintName("FK__aspnet_Pe__PathI__2116E6DF");
+                .HasConstraintName("FK__aspnet_Pe__PathI__2C538F61");
 
             entity.HasOne(d => d.User).WithMany(p => p.AspnetPersonalizationPerUsers)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__aspnet_Pe__UserI__220B0B18");
+                .HasConstraintName("FK__aspnet_Pe__UserI__2D47B39A");
         });
 
         modelBuilder.Entity<AspnetProfile>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__aspnet_P__1788CC4CCD45CB66");
+            entity.HasKey(e => e.UserId).HasName("PK__aspnet_P__1788CC4CBDBE8E54");
 
             entity.ToTable("aspnet_Profile");
 
@@ -295,13 +282,13 @@ public partial class Top4honeyChainsDbContext : DbContext
             entity.HasOne(d => d.User).WithOne(p => p.AspnetProfile)
                 .HasForeignKey<AspnetProfile>(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__aspnet_Pr__UserI__7DCDAAA2");
+                .HasConstraintName("FK__aspnet_Pr__UserI__062DE679");
         });
 
         modelBuilder.Entity<AspnetRole>(entity =>
         {
             entity.HasKey(e => e.RoleId)
-                .HasName("PK__aspnet_R__8AFACE1B6F5B49F0")
+                .HasName("PK__aspnet_R__8AFACE1BFB7EC83E")
                 .IsClustered(false);
 
             entity.ToTable("aspnet_Roles");
@@ -318,12 +305,12 @@ public partial class Top4honeyChainsDbContext : DbContext
             entity.HasOne(d => d.Application).WithMany(p => p.AspnetRoles)
                 .HasForeignKey(d => d.ApplicationId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__aspnet_Ro__Appli__0662F0A3");
+                .HasConstraintName("FK__aspnet_Ro__Appli__0FB750B3");
         });
 
         modelBuilder.Entity<AspnetSchemaVersion>(entity =>
         {
-            entity.HasKey(e => new { e.Feature, e.CompatibleSchemaVersion }).HasName("PK__aspnet_S__5A1E6BC1A901C0E0");
+            entity.HasKey(e => new { e.Feature, e.CompatibleSchemaVersion }).HasName("PK__aspnet_S__5A1E6BC133C68CC5");
 
             entity.ToTable("aspnet_SchemaVersions");
 
@@ -334,7 +321,7 @@ public partial class Top4honeyChainsDbContext : DbContext
         modelBuilder.Entity<AspnetUser>(entity =>
         {
             entity.HasKey(e => e.UserId)
-                .HasName("PK__aspnet_U__1788CC4D8E14A11E")
+                .HasName("PK__aspnet_U__1788CC4DEC0391B0")
                 .IsClustered(false);
 
             entity.ToTable("aspnet_Users");
@@ -356,7 +343,7 @@ public partial class Top4honeyChainsDbContext : DbContext
             entity.HasOne(d => d.Application).WithMany(p => p.AspnetUsers)
                 .HasForeignKey(d => d.ApplicationId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__aspnet_Us__Appli__5B78929E");
+                .HasConstraintName("FK__aspnet_Us__Appli__60FC61CA");
 
             entity.HasMany(d => d.Roles).WithMany(p => p.Users)
                 .UsingEntity<Dictionary<string, object>>(
@@ -364,14 +351,14 @@ public partial class Top4honeyChainsDbContext : DbContext
                     r => r.HasOne<AspnetRole>().WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__aspnet_Us__RoleI__0B27A5C0"),
+                        .HasConstraintName("FK__aspnet_Us__RoleI__147C05D0"),
                     l => l.HasOne<AspnetUser>().WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__aspnet_Us__UserI__0A338187"),
+                        .HasConstraintName("FK__aspnet_Us__UserI__1387E197"),
                     j =>
                     {
-                        j.HasKey("UserId", "RoleId").HasName("PK__aspnet_U__AF2760ADD58E1572");
+                        j.HasKey("UserId", "RoleId").HasName("PK__aspnet_U__AF2760AD2DA47DE7");
                         j.ToTable("aspnet_UsersInRoles");
                         j.HasIndex(new[] { "RoleId" }, "aspnet_UsersInRoles_index");
                     });
@@ -379,7 +366,7 @@ public partial class Top4honeyChainsDbContext : DbContext
 
         modelBuilder.Entity<AspnetWebEventEvent>(entity =>
         {
-            entity.HasKey(e => e.EventId).HasName("PK__aspnet_W__7944C810F560B107");
+            entity.HasKey(e => e.EventId).HasName("PK__aspnet_W__7944C81073C6C167");
 
             entity.ToTable("aspnet_WebEvent_Events");
 
@@ -414,7 +401,6 @@ public partial class Top4honeyChainsDbContext : DbContext
             entity.Property(e => e.BusinessNumber)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.CertificationInfo).HasDefaultValue(false);
             entity.Property(e => e.ExperienceTime).HasDefaultValue((short)0);
             entity.Property(e => e.FirstName)
                 .HasMaxLength(50)
@@ -425,6 +411,10 @@ public partial class Top4honeyChainsDbContext : DbContext
             entity.Property(e => e.LastName)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.Property(e => e.PhoneNumber)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.ProfilePhoto).IsUnicode(false);
         });
 
         modelBuilder.Entity<BeekeeperEducationLevel>(entity =>
@@ -486,20 +476,11 @@ public partial class Top4honeyChainsDbContext : DbContext
         {
             entity.HasKey(e => e.HoneyTestId).HasName("PK_Table_1");
 
+            entity.ToTable(tb => tb.HasTrigger("TR_TestAdded"));
+
             entity.Property(e => e.HoneyTestDatetime).HasColumnType("datetime");
             entity.Property(e => e.HoneyTestTitle)
                 .HasMaxLength(50)
-                .IsUnicode(false);
-        });
-
-        modelBuilder.Entity<HoneyTestItem>(entity =>
-        {
-            entity.HasKey(e => e.HoneyTestItemId).HasName("PK__HoneyTes__C432AFF3BFBABAC1");
-
-            entity.HasIndex(e => e.HoneyTestItemTitle, "UQ__HoneyTes__196341041997BE52").IsUnique();
-
-            entity.Property(e => e.HoneyTestItemTitle)
-                .HasMaxLength(75)
                 .IsUnicode(false);
         });
 
@@ -525,6 +506,12 @@ public partial class Top4honeyChainsDbContext : DbContext
 
         modelBuilder.Entity<HoneyTestStandardItem>(entity =>
         {
+            entity.Property(e => e.HoneyTestItemDesc)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HoneyTestItemTitle)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.HoneyTestItemUnit)
                 .HasMaxLength(50)
                 .IsUnicode(false);

@@ -35,7 +35,7 @@ namespace Top4HoneyChainsMicroservices.BeekeeperApi.Controllers
                 return BadRequest(e.Message);
             }
         }
-        [HttpPost]
+		[HttpPost]
         public ActionResult Post(Beekeeper model)
         {
             try
