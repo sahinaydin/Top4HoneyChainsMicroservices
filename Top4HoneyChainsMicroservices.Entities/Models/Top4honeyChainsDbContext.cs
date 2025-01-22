@@ -92,14 +92,13 @@ public partial class Top4honeyChainsDbContext : DbContext
     public virtual DbSet<VwAspnetWebPartStateUser> VwAspnetWebPartStateUsers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=HASAN\\MSSQLSERVER2017;Database=TOP4HoneyChainsDb;Trusted_Connection=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=INTALALAB;Database=TOP4HoneyChainsDb;User Id=sa;Password=123;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Apiary>(entity =>
         {
             entity.HasKey(e => e.ApiaryId).HasName("PK__Apiaries__7AF2440E983FF371");
-
             entity.Property(e => e.ApiaryQrcode).HasColumnName("ApiaryQRCode");
             entity.Property(e => e.ApiaryTitle)
                 .HasMaxLength(50)

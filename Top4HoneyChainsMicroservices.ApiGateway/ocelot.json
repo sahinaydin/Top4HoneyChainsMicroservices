@@ -9,7 +9,7 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/gateway/GetBeekeepers",
+      "UpstreamPathTemplate": "/gateway/GetBeekeeper  ",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
@@ -1165,5 +1165,5 @@
       "UpstreamHttpMethod": [ "Delete" ]
     }
   ],
-  "GlobalConfiguration": { "BaseUrl": "http://localhost:5025/" }
+  "GlobalConfiguration": { "BaseUrl": "http://top4honeychainsapigateway.intalalab.net" }
 }

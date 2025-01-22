@@ -10,7 +10,6 @@ namespace Top4HoneyChainsMicroservices.AuthenticationApi.Controllers
 {
 	public class AccountController : ApiController
 	{
-
 		[HttpGet]
 		public BeekeeperViewModel Get(string username, string password)
 		{
@@ -56,6 +55,7 @@ namespace Top4HoneyChainsMicroservices.AuthenticationApi.Controllers
 				return null;
 			}
 		}
+
 		[HttpPut]
 		public HttpStatusCode Put(ChangePasswordModel model)
 		{

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Top4HoneyChainsMicroservices.Entities.Models;
 using Top4HoneyChainsMicroservices.Repository.Concrete;
 
@@ -16,6 +15,7 @@ namespace Top4HoneyChainsMicroservices.ApiaryApi.Controllers
         {
             return ac.GetAll();
         }
+
         [HttpGet("{id}")]
         public ActionResult Get(int? id)
         {
@@ -35,7 +35,8 @@ namespace Top4HoneyChainsMicroservices.ApiaryApi.Controllers
                 return BadRequest(e.Message);
             }
         }
-        [HttpPost]
+
+		[HttpPost]
         public ActionResult Post(Apiary model)
         {
             try

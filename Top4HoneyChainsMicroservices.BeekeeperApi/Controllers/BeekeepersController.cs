@@ -16,7 +16,7 @@ namespace Top4HoneyChainsMicroservices.BeekeeperApi.Controllers
         {
             return bc.GetAll();
         }
-        [HttpGet("{id}")]
+        [HttpGet("{identitynumber}")]
         public ActionResult Get(string identitynumber)
         {
             try

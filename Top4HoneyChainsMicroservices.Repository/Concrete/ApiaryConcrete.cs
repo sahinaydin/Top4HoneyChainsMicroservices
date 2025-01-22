@@ -67,5 +67,14 @@ namespace Top4HoneyChainsMicroservices.Repository.Concrete
                 db.SaveChanges();
             }
         }
+
+        public List<Apiary> GetApiaryByBeekeeperId(Guid beekeeperId)
+		{
+			using (var db = new Top4honeyChainsDbContext())
+			{
+				return db.Apiaries.Where(x => x.BeekeeperId == beekeeperId).ToList();
+			}
+		}
+
     }
 }
