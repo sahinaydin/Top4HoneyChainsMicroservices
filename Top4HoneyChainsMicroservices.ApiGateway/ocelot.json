@@ -301,6 +301,18 @@
       "UpstreamHttpMethod": [ "Delete" ]
     },
     {
+      "DownstreamPathTemplate": "/api/ApiaryBeehive/{beekeeperid}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiaryapi.intalalab.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/GetApiariesByBeekeeperId/{beekeeperid}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/ApiaryDisease",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [

@@ -92,13 +92,14 @@ public partial class Top4honeyChainsDbContext : DbContext
     public virtual DbSet<VwAspnetWebPartStateUser> VwAspnetWebPartStateUsers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=INTALALAB;Database=TOP4HoneyChainsDb;User Id=sa;Password=123;");
+        => optionsBuilder.UseSqlServer("Data Source=HASAN\\MSSQLSERVER2017;Initial Catalog=TOP4HoneyChainsDb;Trust Server Certificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Apiary>(entity =>
         {
             entity.HasKey(e => e.ApiaryId).HasName("PK__Apiaries__7AF2440E983FF371");
+
             entity.Property(e => e.ApiaryQrcode).HasColumnName("ApiaryQRCode");
             entity.Property(e => e.ApiaryTitle)
                 .HasMaxLength(50)
@@ -133,13 +134,12 @@ public partial class Top4honeyChainsDbContext : DbContext
 
         modelBuilder.Entity<ApiaryPhoto>(entity =>
         {
-            entity.HasKey(e => e.PhotoId).HasName("PK__ApiaryPh__21B7B5E2D92C95F6");
+            entity.HasKey(e => e.PhotoId).HasName("PK__ApiaryPh__21B7B5E24F96C3CE");
 
+            entity.Property(e => e.ContentType).HasMaxLength(50);
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
-            entity.Property(e => e.Photo)
-                .HasMaxLength(70)
-                .IsUnicode(false);
             entity.Property(e => e.PhotoDesc).IsUnicode(false);
+            entity.Property(e => e.PhotoFileName).HasMaxLength(255);
         });
 
         modelBuilder.Entity<AspnetApplication>(entity =>

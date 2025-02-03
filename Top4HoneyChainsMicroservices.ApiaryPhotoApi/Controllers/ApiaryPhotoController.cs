@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using Top4HoneyChainsMicroservices.ApiaryPhotoApi.Helpers;
 using Top4HoneyChainsMicroservices.Entities.Models;
 using Top4HoneyChainsMicroservices.Entities.ViewModels;
 
@@ -11,68 +10,87 @@ namespace Top4HoneyChainsMicroservices.ApiaryPhotoApi.Controllers
 	public class ApiaryPhotoController : ControllerBase
 	{
 		private readonly Top4honeyChainsDbContext _context = new Top4honeyChainsDbContext();
-		private ImageWriter imageWriter = new ImageWriter();
 
-		[HttpPost]
-		[Route("UploadPhoto")]
-		public Response PostApiaryPhoto([FromForm] ApiaryPhotoViewModel model)
+		[HttpGet("{apiaryid}")]
+		public List<ApiaryPhoto> Get(int apiaryid)
 		{
-			Response response = new Response();
 			try
 			{
-				var imagecount = _context.ApiaryPhotos.Where(a => a.ApiaryId == model.ApiaryId).Count();
-				if (imagecount < 10)
+				if (apiaryid != null)
 				{
-					response = imageWriter.UploadImage(model.File, model);
+					return _context.ApiaryPhotos.Where(a => a.ApiaryId == apiaryid).ToList();
 				}
 				else
 				{
-					response.StatusCode = (int)HttpStatusCode.NotImplemented;
-					response.ErrorMessage = "Upload image limit 10!";
+					return null;
 				}
 			}
-			catch (Exception ex)
+			catch (Exception e)
 			{
-				response.StatusCode = 100;
-				response.ErrorMessage = ex.Message;
+				return null;
 			}
-			return response;
+		}
+
+		[HttpPost("upload")]
+		[Consumes("multipart/form-data")]
+		public async Task<IActionResult> UploadPhoto([FromForm] ApiaryPhotoViewModel apiaryPhotoViewModel)
+		{
+			if (apiaryPhotoViewModel.File == null || apiaryPhotoViewModel.File.Length == 0)
+			{
+				return BadRequest("No file uploaded.");
+			}
+
+			using (var memoryStream = new MemoryStream())
+			{
+				await apiaryPhotoViewModel.File.CopyToAsync(memoryStream);
+				var photo = new ApiaryPhoto
+				{
+					ApiaryId = apiaryPhotoViewModel.ApiaryId,
+					PhotoDesc = apiaryPhotoViewModel.PhotoDesc,
+					CreatedDate = DateTime.UtcNow,
+					ProductionPeriodId = apiaryPhotoViewModel.ProductionPeriodId,
+					Approved = false,
+					ImageData = memoryStream.ToArray(),
+					PhotoFileName = apiaryPhotoViewModel.File.FileName,
+					ContentType = apiaryPhotoViewModel.File.ContentType
+				};
+
+				_context.ApiaryPhotos.Add(photo);
+				await _context.SaveChangesAsync();
+
+				return Ok();
+			}
 		}
 
 		[HttpDelete]
-		[Route("RemovePhoto/{id}")]
-		public Response DeleteApiaryPhoto(int? id)
+		[Route("{id}")]
+		public ActionResult Delete(int? id)
 		{
-			Response response = new Response();
 			try
 			{
-				if (id != null)
-				{
+                if (id != null)
+                {
 					var photo = _context.ApiaryPhotos.Find(id);
 					if (photo != null)
 					{
 						_context.ApiaryPhotos.Remove(photo);
 						_context.SaveChanges();
-						response = imageWriter.DeleteImage(photo.ApiaryId.ToString(), photo.Photo);
+						return Ok();
 					}
 					else
 					{
-						response.StatusCode = (int)HttpStatusCode.NotImplemented;
-						response.ErrorMessage = "The photo is not found!";
+						return BadRequest(ModelState);
 					}
-				}
+                }
 				else
 				{
-					response.StatusCode = (int)HttpStatusCode.NotImplemented;
-					response.ErrorMessage = "The photo is not valid!";
+					return BadRequest(ModelState);
 				}
-			}
-			catch (Exception ex)
+            }
+			catch (Exception e)
 			{
-				response.StatusCode = 200;
-				response.ErrorMessage = ex.Message;
+				return BadRequest(e.Message);
 			}
-			return response;
 		}
 	}
 }

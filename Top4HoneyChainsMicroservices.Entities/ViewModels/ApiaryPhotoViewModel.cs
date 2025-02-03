@@ -8,15 +8,17 @@ namespace Top4HoneyChainsMicroservices.Entities.ViewModels
 
 		public int? ApiaryId { get; set; }
 
-		public string Photo { get; set; } = null!;
+		public string? PhotoDesc { get; set; }
 
-		public string PhotoDesc { get; set; } = null!;
+		public DateTime? CreatedDate { get; set; }
 
-		public DateTime CreatedDate { get; set; }
+		public int? ProductionPeriodId { get; set; }
 
-		public int ProductionPeriodId { get; set; }
+		public bool? Approved { get; set; }
 
-		public bool Approved { get; set; }
+		public string? PhotoFileName { get; set; }
+
+		public string? ContentType { get; set; }
 		public required IFormFile File { get; set; }
 	}
 }
