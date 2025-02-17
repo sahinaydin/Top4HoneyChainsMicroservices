@@ -92,7 +92,7 @@ public partial class Top4honeyChainsDbContext : DbContext
     public virtual DbSet<VwAspnetWebPartStateUser> VwAspnetWebPartStateUsers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=HASAN\\MSSQLSERVER2017;Initial Catalog=TOP4HoneyChainsDb;Trust Server Certificate=True;");
+        => optionsBuilder.UseSqlServer("Data Source=HASAN\\MSSQLSERVER2017;Initial Catalog=TOP4HoneyChainsDb;Trust Server Certificate=True;Trusted_Connection=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
