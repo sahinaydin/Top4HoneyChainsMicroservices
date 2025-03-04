@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net;
+using System.Reflection;
 using Top4HoneyChainsMicroservices.Entities.Models;
 using Top4HoneyChainsMicroservices.Entities.ViewModels;
 
@@ -18,7 +18,8 @@ namespace Top4HoneyChainsMicroservices.ApiaryPhotoApi.Controllers
 			{
 				if (apiaryid != null)
 				{
-					return _context.ApiaryPhotos.Where(a => a.ApiaryId == apiaryid).ToList();
+					var apiaryPhotos = _context.ApiaryPhotos.Where(a => a.ApiaryId == apiaryid && a.Approved == true).ToList();
+					return apiaryPhotos;
 				}
 				else
 				{
@@ -39,6 +40,8 @@ namespace Top4HoneyChainsMicroservices.ApiaryPhotoApi.Controllers
 			{
 				return BadRequest("No file uploaded.");
 			}
+
+
 
 			using (var memoryStream = new MemoryStream())
 			{

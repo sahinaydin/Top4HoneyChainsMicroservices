@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Top4HoneyChainsMicroservices.Entities.Models;
+using Top4HoneyChainsMicroservices.Entities.ViewModels;
 using Top4HoneyChainsMicroservices.Repository.Concrete;
 
 namespace Top4HoneyChainsMicroservices.HoneyTestApi.Controllers
@@ -15,23 +16,36 @@ namespace Top4HoneyChainsMicroservices.HoneyTestApi.Controllers
         {
             return htr.GetAll();
         }
-        [HttpGet("{id}")]
-        public ActionResult Get(int? id)
+        [HttpGet("{honeytestid}")]
+        public List<HoneyTestResultViewModel> Get(int honeytestid)
         {
             try
             {
-                if (id != null)
+                using (var db = new Top4honeyChainsDbContext())
                 {
-                    return Ok(htr.GetById((int)id));
-                }
-                else
-                {
-                    return NotFound();
-                }
+                    var result = (
+						from htr in db.HoneyTestResults
+                        join htsi in db.HoneyTestStandardItems on htr.HoneyTestStandardItemId equals htsi.HoneyTestStandardItemId
+						where htr.HoneyTestId == honeytestid
+                        select new HoneyTestResultViewModel
+                        {
+                            HoneyTestId = htr.HoneyTestId,
+							HoneyTestIresultd = htr.HoneyTestIresultd,
+							HoneyTestStandardItemId = htr.HoneyTestStandardItemId,
+							HoneyTestItemValue = htr.HoneyTestItemValue,
+                            HoneyTestItemTitle = htsi.HoneyTestItemTitle,
+							HoneyTestItemUnit = htsi.HoneyTestItemUnit,
+							HoneyTestItemDesc = htsi.HoneyTestItemDesc,
+							ReferenceRangeValue = htsi.ReferenceRangeValue
+
+						}).ToList();
+
+                    return result;
+				}
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                return null;
             }
         }
         [HttpPost]

@@ -7,7 +7,7 @@ public partial class HoneyTestResult
 {
     public int HoneyTestIresultd { get; set; }
 
-    public int? HoneyTestId { get; set; }
+    public int HoneyTestId { get; set; }
 
     public int? HoneyTestStandardItemId { get; set; }
 
